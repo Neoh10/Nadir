@@ -12,32 +12,33 @@
 </form>
 <div>
     <?php
-    $primes = array(15);
+
     function getDivisors($num){
-        if (isset($_POST["num"])) {
-            $num = intval($_POST["num"]);
-            for($i = 1; $i < $num; $i++){
-                if ($num % $i == 0){
-                    $primes[] = $i;
-                }
+        for($i = 1; $i < $num; $i++){
+            if ($num % $i == 0){
+                return $i;
             }
         }
     }
 
     function isPrimeNum($num){
-        if ($num == 1)
-            return 0;
-        for ($i = 2; $i <= $num/2; $i++){
-            if ($num % $i == 0)
-                return 0;
+        $count = 0;
+
+        for ($i = 2; $count < $num / 2; $i++) {
+            if ($num % $i == 0) {
+                return false;
+            }
         }
-        return 1;
+
+        return true;
     }
+
 
     if (isset($_POST["num"])) {
         $num = intval($_POST["num"]);
-        //TODO: YOUR CODE HERE
+        isPrimeNum($num);
     }
+    // sssssssssssssssssssssss
     ?>
 </div>
 </body>
