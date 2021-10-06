@@ -13,14 +13,23 @@
 <div>
 <?php
     function getFlats($num){
+        $contadorVacio = $num;
+        $contadorAsteriscos = 1;
         for ($i = 0; $i < $num; $i++) {
 
-            for ($j = 0; $j < $i; $j++){
-                echo "*";
-
+            for ($j = 0; $j < $contadorVacio; $j++){
+                echo " ";
             }
+
+            for ($k = 0; $k < $contadorAsteriscos; $k++){
+                echo "*";
+            }
+
+            for ($j = 0; $j < $contadorVacio; $j++){
+                echo " ";
+            }
+
             echo "</br>";
-            //
         }
 
     }
