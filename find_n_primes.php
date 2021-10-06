@@ -38,7 +38,7 @@
         $num = intval($_POST["num"]);
         isPrimeNum($num);
     }
-    // sssssssssssssssssssssss
+
     ?>
 </div>
 </body>
