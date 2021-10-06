@@ -10,7 +10,7 @@
     </label>
     <input type="submit"/>
 </form>
-<div>
+<div style="background-color: darkgreen; width: min-content">
 <?php
     function getFlats($num){
         $contadorVacio = $num;
@@ -18,18 +18,21 @@
         for ($i = 0; $i < $num; $i++) {
 
             for ($j = 0; $j < $contadorVacio; $j++){
-                echo " ";
+                echo "<span style='color: darkgreen'>A";
             }
 
             for ($k = 0; $k < $contadorAsteriscos; $k++){
-                echo "*";
+                echo "<span style='color: white'>A";
+
             }
 
-            for ($j = 0; $j < $contadorVacio; $j++){
-                echo " ";
+            for ($l = 0; $l < $contadorVacio; $l++){
+                echo "<span style='color: darkgreen'>A";
             }
 
             echo "</br>";
+            $contadorAsteriscos +=2;
+            $contadorVacio--;
         }
 
     }
