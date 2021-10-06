@@ -13,12 +13,18 @@
 <div>
 <?php
     function getFlats($num){
-        for ($i = 1; $i < $num; $i++) {
-                echo "*";
-            for($j = 0; $j < $i; $j++) {
-                echo "*";
-            }
+        for ($i = 0; $i < $num; $i++) {
 
+            for ($j = 0; $j < $i; $j++){
+                echo "*";
+
+            }
+            echo "</br>";
         }
-        echo "<br/>";
+
+    }
+
+    if (isset($_POST["num"])) {
+        $num = intval($_POST["num"]);
+        getFlats($num);
     }
