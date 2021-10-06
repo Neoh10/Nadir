@@ -32,7 +32,7 @@
 
         return true;
     }
-
+    // Prueba git 6 de octubre
 
     if (isset($_POST["num"])) {
         $num = intval($_POST["num"]);
