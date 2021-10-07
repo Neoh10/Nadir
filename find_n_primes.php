@@ -1,50 +1,45 @@
 <html lang="es">
-    <head>
-        <title>Find N prime numbers</title>
-    </head>
-    <body>
-        <form method="post" action="find_n_primes.php">
-            <label>
-                Number:
-                <input type="text" name="num"/>
-            </label>
-            <input type="submit"/>
-        </form>
-        <div>
-            <?php
-            function getDivisors($num){
-                $array = array();
-                for($i = 1; $i <= $num; $i++) {
-                    if ($num % $i == 0) {
-                        $array[] = $i;
-                    }
-                }
-                return $array;
-            }
+<head>
+    <title>Find N prime numbers</title>
+</head>
+<body>
+<form method="post" action="find_n_primes.php">
+    <label>
+        Number:
+        <input type="text" name="num"/>
+    </label>
+    <input type="submit"/>
+</form>
+<div>
+    <?php
 
-            function isPrimeNum($num){
-                /*if (count(getDivisors($num)) == 2){
-                    return true;
-                }
-                return false;*/
-                return count(getDivisors($num)) == 2;
+    function getDivisors($num){
+        for($i = 1; $i < $num; $i++){
+            if ($num % $i == 0){
+                return $i;
             }
-            if (isset($_POST["num"])) {
-                $num = intval($_POST["num"]);
-                $i = 0;
-                $primes = array();
-                while (count($primes) < $num){
-                    $i++;
-                    if (isPrimeNum($i)){
-                        $primes[] = $i;
-                    }
-                }
-                echo "First ".$num." prime numbers are: <br>";
-                foreach ($primes as $prime) {
-                    echo "- ".$prime."<br>";
-                }
+        }
+    }
+
+    function isPrimeNum($num){
+        $count = 0;
+
+        for ($i = 2; $count < $num / 2; $i++) {
+            if ($num % $i == 0) {
+                return false;
             }
-            ?>
-        </div>
-    </body>
+        }
+
+        return true;
+    }
+    // Prueba git 6 de octubre
+
+    if (isset($_POST["num"])) {
+        $num = intval($_POST["num"]);
+        isPrimeNum($num);
+    }
+
+    ?>
+</div>
+</body>
 </html>
