@@ -7,7 +7,7 @@
         input{
             font-size: 3em;
             line-height: 1.5em;
-            border-top: 1px solid #fff;
+            border-top: 1px solid #ffffff;
             border-bottom: 1px solid #fff;
             background: #fff;
             background: rgba(255, 255, 255, .6);
